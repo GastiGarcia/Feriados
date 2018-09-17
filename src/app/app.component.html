@@ -1,0 +1,15 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container">
+  <div class="row">
+    <div class="col-2 col-background">
+      <button class='btn btn-primary'(click)="goTo('/screen-one/tab-one')">pantalla 1
+      </button>
+      <button class='btn btn-primary' (click)="goTo('/screen-two/tab-one')">pantalla 2
+
+      </button>
+    </div>
+    <div class="col-9 col-background">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

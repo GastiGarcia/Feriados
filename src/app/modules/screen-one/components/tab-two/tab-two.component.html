@@ -1,0 +1,38 @@
+
+<div class="row">
+  <button class='btn btn-primary' (click)="goTo('/screen-one/tab-one')">Tab 1 </button>
+  <button class='btn btn-primary' (click)="goTo('/screen-one/tab-two')">Tab 2 </button>
+</div>
+<div class="row">
+    <div class ="encabezado">
+         </div>
+         <div class="cuerpo">
+          <table class="table">
+              <thead>
+                <th>#</th>
+                <th>Motivo</th>
+                <th>Tipo</th>
+                <th>Dia</th>
+                <th>Mes</th>
+                <th>Id</th>
+              </thead>
+            <tbody>
+              <tr *ngFor="let fecha of fechas; let myindex = index">
+                <td>{{myindex + 1}}</td>
+                <td >{{fecha.motivo}}</td>
+                <td >{{fecha.tipo}}</td>
+                <td >{{fecha.dia}}</td>
+                <td >{{fecha.mes}}</td>
+                <td >{{fecha.id}}</td>
+              </tr>
+            </tbody>
+
+          </table>
+     </div>
+</div> 
+  
+  
+  
+  
+  
+

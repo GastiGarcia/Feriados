@@ -1,0 +1,18 @@
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.styl']
+})
+export class AppComponent {
+  title = 'angular';
+  public class = 'btn btn-warning';
+
+  constructor(private router: Router) {}
+  public goTo(url) {
+    this.router.navigate([url]);
+  }
+}
+

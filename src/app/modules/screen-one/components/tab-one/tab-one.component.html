@@ -1,0 +1,86 @@
+
+<div class=row> 
+<button class='btn btn-primary' (click)="goTo('/screen-one/tab-one')">Tab 1 </button>
+<button class='btn btn-primary' (click)="goTo('/screen-one/tab-two')">Tab 2 </button>
+</div>
+<!--
+<div class=row>
+    <div >
+        <input type="text" placeholder="Dia" [(ngModel)]="inputDia" name ="inputDia" >
+    </div>
+
+    <div >
+        <input type="text" placeholder="Mes" name ="inputMes">
+    </div>
+
+    <div >
+        <button (click)="signup()">SIGN UP</button> 
+    </div>
+
+</div>
+
+
+<div class=rowForm>
+    <form class= formulario [formgroup]="myform">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+-->
+
+<div class=rowForm>
+    <span class="tittle">Ingrese Feriado</span>
+  <form class ="formulario" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div class="form-group" > 
+      <div class="col-sm-4">
+        <input type="number" class="form-control" max="2" min="2" formControlName="dia" requiered minlegth="2" requiered maxlength="2" id="dia" placeholder="Día" />
+            <div *ngIf="flag && f.dia.errors" class="alert alert-danger">
+                    
+              <div *ngIf="f.dia.hasError('minlength')">Mínimo de 2 digitos</div>
+                    
+                <div *ngIf="f.dia.errors.required">Ingrese Día</div>
+                    
+                  <div *ngIf="f.dia.hasError('maxlength')">Máximo de 2 digitos</div>
+                    
+            </div>
+      </div>
+    </div>
+    
+      
+    <div class="form-group">
+        <div class="col-sm-4"> 
+        <input type="number" class="form-control" formControlName="mes" id="mes" placeholder="Mes"/>
+            <div *ngIf="flag && f.mes.errors" class="alert alert-danger">
+                <div *ngIf="f.mes.errors.required">Ingrese Día
+  
+                  <div *ngIf="f.mes.errors.minlength">Mínimo de 2 digitos</div>
+  
+                    <div *ngIf="f.mes.errors.maxlength">Máximo de 2 digitos</div>
+  
+                  </div>
+      </div> 
+    </div> 
+    <button type="submit" class="btn btn-primary" (click)="eventoClick()">Verificar</button>
+    
+    <div class="col-sm-4">
+        <div *ngIf="((f.invalid) && !click)" class = "alert alert-success"> Correcto</div>
+    </div>
+  </div>
+    </form>
+    
+</div>
+
+
+
