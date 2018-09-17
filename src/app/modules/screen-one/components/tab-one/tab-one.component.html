@@ -45,7 +45,7 @@
   <form class ="formulario" [formGroup]="myForm" (ngSubmit)="onSubmit()">
     <div class="form-group" > 
       <div class="col-sm-4">
-        <input type="number" class="form-control" max="2" min="2" formControlName="dia" requiered minlegth="2" requiered maxlength="2" id="dia" placeholder="Día" />
+        <input type="number" class="form-control" formControlName="dia" id="dia" placeholder="Día" />
             <div *ngIf="flag && f.dia.errors" class="alert alert-danger">
                     
               <div *ngIf="f.dia.hasError('minlength')">Mínimo de 2 digitos</div>
@@ -72,10 +72,11 @@
                   </div>
       </div> 
     </div> 
-    <button type="submit" class="btn btn-primary" (click)="eventoClick()">Verificar</button>
-    
+    <button type="submit" class="btn btn-primary" (onclick)="eventoClick()">Verificar</button>
     <div class="col-sm-4">
-        <div *ngIf="((f.invalid) && !click)" class = "alert alert-success"> Correcto</div>
+      
+        <div *ngIf="(eventoClick())" class = "alert alert-success"> Correcto</div>
+        
     </div>
   </div>
     </form>

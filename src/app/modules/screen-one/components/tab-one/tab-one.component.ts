@@ -32,14 +32,21 @@ export class TabOneComponent implements OnInit {
   onSubmit() {
     this.flag = true;
         if (this.myForm.invalid) {
+          this.click = false;
             return false;
         }
+        this.click = true;
         console.log(JSON.stringify(this.myForm.value));
         return true;
   }
   public eventoClick() {
-    this.click = !this.click;
-  }
+    console.log(this.click);
+  if (this.click) {
+    return true;
+  }  console.log(this.click);
+  return false;
+}
+
 
   verificarLargo (campo) {
     console.log('campo');
